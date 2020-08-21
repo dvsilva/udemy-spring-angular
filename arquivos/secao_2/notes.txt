@@ -1,0 +1,6 @@
+links
+
+https://drive.google.com/drive/folders/1p3Hfxo4PcbqwlP4sA5CiObrSQN2CiupG
+https://www.jetbrains.com/idea/download/
+https://www.postman.com/downloads/
+https://maven.apache.org/download.cgi
