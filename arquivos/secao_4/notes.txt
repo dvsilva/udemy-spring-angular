@@ -1,0 +1,36 @@
+spring boot starters
+tem uma série de configurações que vem com ele
+
+parent -> starter do spring boot parent e depois adiciona os módulos do parent e vem com classes de configuração
+
+@Configuration e @Beans
+
+ContainerIoC (inversão de controle) - contexto da aplicação
+delega tarefas como configuração, conexão do banco de dados
+container armazena essas informações
+
+anotações para ser gerenciados pelo Spring
+@Configuration -> @Beans
+@Component -> @Controller, @Repository e @Service
+
+scanea a partir do pacote base onde está a classe aplication
+colocar a anotação @ComponentScan(basePackages= {""}) para scanear classes fora do pacote base
+
+injeção de dependências
+- delegar a outras classes que instancia as classes e injeta onde precisa da classe
+
+arquivo de configurações - application.properties
+server.port=8081
+server.servlet.context-path=/sistema-vendas
+
+configurações atraves de perfils (profiles)
+- criar arquivos
+application-development.properties
+application-production.properties
+- no arquivo application.properties
+spring.profiles.active=development
+
+ou anotar a classe só para ser executara / utilizada em determinado ambiente
+@Profile("development")
+
+- anotations customizadas
