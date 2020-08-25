@@ -1,0 +1,73 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Clientes",
+		"_postman_id": "7b640476-43ef-11b1-0ac3-ac1fe8bad6e0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Criar Cliente",
+			"request": {
+				"url": "http://localhost:8080/api/clientes",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"Fulano de Tal\",\n\t\"cpf\" : \"19394998012\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Cliente",
+			"request": {
+				"url": "http://localhost:8080/api/clientes/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Cliente",
+			"request": {
+				"url": "http://localhost:8080/api/clientes/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Cliente",
+			"request": {
+				"url": "http://localhost:8080/api/clientes/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"Beltrano de Tal\",\n\t\"cpf\" : \"19394998012\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

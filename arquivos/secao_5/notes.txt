@@ -1,0 +1,13 @@
+criar projeto
+adicionar parent do spring boot
+adicionar dependencias
+- spring boot starter
+- spring web
+- spring data jpa
+- h2 database
+- lombok
+- validation
+adicionar plugin do build do maven
+
+@RestController -> todos os métodos são anotados com @RequestBody
+
