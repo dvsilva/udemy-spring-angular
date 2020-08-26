@@ -1,0 +1,65 @@
+links
+https://angular.io/docs
+https://code.visualstudio.com/
+https://www.typescriptlang.org/play?#code/PTAEHUFMBsGMHsC2lQBd5oBYoCoE8AHSAZVgCcBLA1UABWgEM8BzM+AVwDsATAGiwoBnUENANQAd0gAjQRVSQAUCEmYKsTKGYUAbpGF4OY0BoadYKdJMoL+gzAzIoz3UNEiPOofEVKVqAHSKymAAmkYI7NCuqGqcANag8ABmIjQUXrFOKBJMggBcISGgoAC0oACCoASMFmgY7p7ehCTkVOle4jUMdRLYTqCc8LEZzCZmoNJODPHFZZXVtZYYkAAeRJTInDQS8po+rf40gnjbDKv8LqD2jpbYoACqAEoAMsK7sUmxkGSCc+VVQQuaTwVb1UBrDYULY7PagbgUZLJH6QbYmJAECjuMigZEMVDsJzCFLNXxtajBBCcQQ0MwAUVWDEQNUgADVHBQGNJ3KAALygABEAAkYNAMOB4GRogLFFTBPB3AExcwABT0xnM9zsyhc9wASmCKhwDQ8ZC8iElzhB7Bo3zcZmY7AYzEg-Fg0HUiS58D0Ii8AoZTJZggFSRxAvADlQAHJhAA5SASAVBFQAeW+ZF2gldWkgx1QjgUrmkeFATgtOlGWH0KAQiBhwiudokkuiIgMHBx3RYbC43CCJSAA
+https://nodejs.org/en/
+https://cli.angular.io/
+
+angular
+framework para construir aplicações do lado do cliente
+perfeito para SPA (Single Page Application)
+agordagem modular
+desenvolva rápido e fácil
+testável através de testes de unidade
+goggle + microsoft
+
+arquitetura
+modulos, componentes, templates, metadados, data binding, directivas, services e injeção de dependências
+
+pacote de fonte -> firacode
+vscode -> settings -> text editors -> font (firacode)
+settings.json -> "editor.fontLigatures"=true
+
+typescript
+instalar nodejs
+
+criando aplicação angular
+npm install -g @angular/cli
+ng new clientes-app
+	yes (routing)
+	CSS
+cd clientes-app
+ng serve --open
+(--open abre o browser)
+
+criar componente via comando
+ng g c cursoAngular
+g -> generate
+c -> component
+
+criar componente sem arquivo de testes
+ng g c teste --skipTests=true
+
+modulos (pode expor componentes para outros módulos)
+ServicosModule
+ClientesModule
+AppModule
+ControleAcessoModule
+
+declarations -> componentes que fazem parte do modulo no arquivo app.module.ts
+providers -> serviços
+bootstrap -> só deve estar nesse arquivo, é a inicializacao
+
+criar modulo
+ng g m clientes
+g -> generate
+m -> modulo
+
+ng g c clientes
+
+criar modulo -> criar componente -> exportar componente no modulo
+importar no app.module -> colocar no app.component.html
+
+templates e interpolação
+{{propriedade}}
+*ngFor="let cliente of clientes"
