@@ -1,0 +1,90 @@
+criar modulos com configuração de rotas
+ng g m clientes --routing
+
+criar componente de formulario de clientes
+ng g c clientes/clientesForm --skipTests=true
+
+adicionar tag para renderizar compoentes baseados na rota
+<router-outlet></router-outlet>
+
+declarar no app-routing-module.ts
+const routes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+];
+
+data-binding
+importar no clientes.module.ts dependencia para trabalhar com forms
+import { FormsModule } from '@angular/forms';
+
+interpolação {{}} - unidirecional
+binding do componente para o template
+
+this.cliente = new Cliente();
+this.cliente.nome = 'Danyllo';
+
+{{ cliente.nome }}
+<input type="text" class="form-control" value="{{ cliente.nome }}" />
+
+property binding - unidirecional
+binding do componente para o template
+[value]="cliente.nome" OU bind-value="cliente.nome"
+
+event-binding (eventos) - unidirecional
+binding do template para o componente
+<button type="submit" class="btn btn-success" (click)="clicar()">
+
+two way databinding - bidirecional
+binding do template para o componente e vice-versa
+<input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome"/>
+
+outra opção para submeter o form
+<form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
+
+usar two way databinding para os campos
+usar event binding para submeter / obter as informações do form
+
+serviços
+propositos especificos - compartilhar dados, implementar lógica da aplicação, interações externas
+convenção de nome - xxx.service.ts
+não repetição de código e principio da responsabilidade única
+
+criar serviço
+ng g s clientes
+
+declarar no arquivo app.module.ts
+providers: [ClientesService]
+
+injetar o service no construtor
+constructor(private service: ClientesService)
+
+importar dependencia para fazer requisições http
+import { HttpClientModule } from '@angular/common/http';
+
+injetar no construtor do sreviço
+import { HttpClient } from '@angular/common/http';
+constructor(private http: HttpClient) {}
+
+CORS -> cross origin resource sharing
+compartilhamento de recursos com origens diferentes
+proteção adicional adicionada pelo navegador
+
+configuração da API -> alterar classe de controller
+@CrossOrigin("http://localhost:4200")
+
+criar componente de lista
+ng g c clientes/clientesLista
+
+fazer link de paginas
+import { Router } from '@angular/router';
+constructor(private service: ClientesService, private router: Router) {}
+
+novoCadastro(){
+  this.router.navigate(['/clientes-form']);
+}
+
+
+
+

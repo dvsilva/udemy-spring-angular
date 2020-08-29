@@ -1,8 +1,11 @@
 package io.github.dvsilva.clientes.rest;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +22,7 @@ import io.github.dvsilva.clientes.model.repository.ClienteRepository;
 
 @RestController
 @RequestMapping("/api/clientes")
+@CrossOrigin("http://localhost:4200")
 public class ClienteController {
 
 	private final ClienteRepository repository;
@@ -27,6 +31,11 @@ public class ClienteController {
 		this.repository = repository;
 	}
 
+	@GetMapping
+	public List<Cliente> obterTodos() {
+		return repository.findAll();
+	}
+	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Cliente salvar(@Valid @RequestBody Cliente cliente) {
