@@ -1,0 +1,101 @@
+<h1 class="mt-4">Serviço Prestado</h1>
+<ol class="breadcrumb mb-4">
+  <li class="breadcrumb-item active">Consulta</li>
+</ol>
+
+<div class="container">
+  <form #consultaForm="ngForm" (ngSubmit)="consultar()">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="inputNome">Nome do Cliente:</label>
+        <input
+          type="text"
+          [(ngModel)]="nome"
+          name="nome"
+          class="form-control"
+          id="inputNome"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <label for="inputMes">Mês:</label>
+        <select
+          class="form-control"
+          [ngModelOptions]="{ standalone: true }"
+          [(ngModel)]="mes"
+          name="mes"
+        >
+          <option value="">Selecione ...</option>
+          <option *ngFor="let mes of meses" [ngValue]="mes">
+            {{ mes }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <br />
+
+    <div class="row">
+      <div class="col-md-3">
+        <button type="submit" class="btn btn-primary">
+          <i class="fa fa-search"></i> Consultar
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-warning ml-1"
+          routerLink="/servico-prestado-form"
+        >
+          <i class="fa fa-plus"></i> Novo
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <br />
+
+  <div class="row">
+    <div class="alert alert-warning" role="alert" *ngIf="message">
+      {{ message }}
+    </div>
+    <div class="col-md-12">
+      <table class="table table-condensed table-hover">
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Data</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let servico of lista">
+            <td>{{ servico.cliente.nome }}</td>
+            <td>{{ servico.descricao }}</td>
+            <td>{{ servico.valor }}</td>
+            <td>{{ servico.data }}</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-primary"
+                routerLink="/clientes-form/{{ cliente.id }}"
+              >
+                <i class="fa fa-edit"></i>
+              </button>
+
+              <button
+                type="button"
+                class="btn btn-danger ml-1"
+                data-toggle="modal"
+                data-target="#modalDelecao"
+                (click)="preparaDelecao(cliente)"
+              >
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

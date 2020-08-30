@@ -5,8 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { TemplateModule } from './template/template.module';
 import { ClientesModule } from './clientes/clientes.module';
+import { ServicoPrestadoModule } from './servico-prestado/servico-prestado.module';
 
 import { ClientesService } from './clientes.service';
+import { ServicoPrestadoService } from './servico-prestado.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -17,9 +19,10 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     TemplateModule,
     ClientesModule,
+    ServicoPrestadoModule,
     HttpClientModule,
   ],
-  providers: [ClientesService],
+  providers: [ClientesService, ServicoPrestadoService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,0 +1,37 @@
+criar modulo serviço prestado com roteamento
+ng g m --routing servicoPrestado
+
+criar componente de formulario e lista
+ng g c servico-prestado/servicoPrestadoForm --skipTests=true
+ng g c servico-prestado/servicoPrestadoLista --skipTests=true
+
+criar componentes html automativo ex:
+div.row>div.col-md-12>div.form-group>label+select
+div.row>div.col-md-12>div.form-group>label+input:text
+
+criar componente combobox
+<select
+	class="form-control"
+	[ngModelOptions]="{ standalone: true }"
+	[(ngModel)]="servico.idCliente"
+          >
+		<option value="">Selecione ...</option>
+		<option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
+  			{{ cliente.nome }}
+		</option>
+</select>
+
+trabalhando com objetos no select
+[ngModelOptions]="{ standalone: true }"
+
+criar service servicoPrestado
+ng g s servicoPrestado --skipTests=true
+
+editar o arquivo environment.ts para a url da api
+export const environment = {
+  production: false,
+  apiURL: 'http://localhost:8080/',
+};
+
+
+

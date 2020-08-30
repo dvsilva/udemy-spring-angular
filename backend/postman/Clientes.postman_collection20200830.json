@@ -1,0 +1,142 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ControleClientes",
+		"_postman_id": "7b640476-43ef-11b1-0ac3-ac1fe8bad6e0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"description": "",
+			"item": [
+				{
+					"name": "Criar Cliente",
+					"request": {
+						"url": "http://localhost:8080/api/clientes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Fulano de Tal\",\n\t\"cpf\" : \"19394998012\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Cliente",
+					"request": {
+						"url": "http://localhost:8080/api/clientes/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Cliente",
+					"request": {
+						"url": "http://localhost:8080/api/clientes/1",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Cliente",
+					"request": {
+						"url": "http://localhost:8080/api/clientes/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Beltrano de Tal\",\n\t\"cpf\" : \"19394998012\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ServicosPrestados",
+			"description": "",
+			"item": [
+				{
+					"name": "Criar Serviço Prestado",
+					"request": {
+						"url": "http://localhost:8080/api/servicos-prestados",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"descricao\": \"Formatação de PC\",\n\t\"preco\": \"50,00\",\n\t\"data\" : \"01/01/2020\",\n\t\"idCliente\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Serviço Prestado",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/servicos-prestados?mes=1&nome=Fulano",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"servicos-prestados"
+							],
+							"query": [
+								{
+									"key": "mes",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "nome",
+									"value": "Fulano",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
