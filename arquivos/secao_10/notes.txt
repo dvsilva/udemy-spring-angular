@@ -1,0 +1,62 @@
+criar componente da página de login
+ng g c login --skipTests=true
+
+criar componente de layout padrão aréa logada
+ng g c layout --skipTests=true
+
+spring security + oauth 2 (https://oauth.net/2/)
+- oauth 2 -> especificação para autenticação
+- autorization server -> aplicação de autenticação (conheçe os usuarios permissões ...)
+	- recebe client_id e client_secret
+	- retona access_token
+- resource server -> recursos para serem consumidos
+	- recebe o access_token
+- aplicação cliente
+
+adicionar dependências no pom.xml
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+
+<dependency>
+	<groupId>org.springframework.security.oauth.boot</groupId>
+	<artifactId>spring-security-oauth2-autoconfigure</artifactId>
+	<version>2.0.1.RELEASE</version>
+</dependency>
+
+<dependency>
+	<groupId>org.springframework.security</groupId>
+	<artifactId>spring-security-jwt</artifactId>
+	<version>1.1.0.RELEASE</version>
+</dependency>
+
+criar classe de configuração
+
+@EnableWebSecurity
+@EnableResourceServer
+@EnableAuthorizationServer
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+}
+
+token JWT (json web token)
+padrão RFC 7519
+como transmitir e armazenar objetos json entre app de forma segura
+sintaxe: header + payload + assinatura
+
+criar serviço de autenticação no frontend
+ng g s auth --skipTests=true
+
+sessionstorage -> fechar a aba perde as informações
+localstorage -> mantem as informações mesmo fechando a aba
+
+criar um interceptor
+ng g interceptor token --skipTests=true
+
+criar guard (problema do acesso direto pelo link) -> CanActivate()
+ng g guard auth --skipTests=true
+
+isntalar biblioteca para verificar se esta logado
+pegar informações do token / decodificar token
+npm install --save @auth0/angular-jwt

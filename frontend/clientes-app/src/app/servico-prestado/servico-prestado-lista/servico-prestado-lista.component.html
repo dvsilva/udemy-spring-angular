@@ -43,7 +43,7 @@
         <button
           type="button"
           class="btn btn-warning ml-1"
-          routerLink="/servico-prestado-form"
+          routerLink="/servico-prestado/form"
         >
           <i class="fa fa-plus"></i> Novo
         </button>
@@ -65,7 +65,6 @@
             <th>Descrição</th>
             <th>Preço</th>
             <th>Data</th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -74,25 +73,6 @@
             <td>{{ servico.descricao }}</td>
             <td>{{ servico.valor }}</td>
             <td>{{ servico.data }}</td>
-            <td>
-              <button
-                type="button"
-                class="btn btn-primary"
-                routerLink="/clientes-form/{{ cliente.id }}"
-              >
-                <i class="fa fa-edit"></i>
-              </button>
-
-              <button
-                type="button"
-                class="btn btn-danger ml-1"
-                data-toggle="modal"
-                data-target="#modalDelecao"
-                (click)="preparaDelecao(cliente)"
-              >
-                <i class="fa fa-trash"></i>
-              </button>
-            </td>
           </tr>
         </tbody>
       </table>
