@@ -1,0 +1,23 @@
+<mat-card style="text-align: center">
+  <mat-card-header>
+    <mat-icon>face</mat-icon>
+    Contato
+  </mat-card-header>
+
+  <img
+    class="foto"
+    mat-car-image
+    src="data:image/jpg;base64,{{ contato.foto }}"
+  />
+
+  <mat-card-content>
+    <p>
+      <strong>{{ contato.nome }}</strong> <br />
+      <strong>{{ contato.email }}</strong>
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="fechar()">Fechar</button>
+  </mat-card-actions>
+</mat-card>

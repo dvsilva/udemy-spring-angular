@@ -1,0 +1,29 @@
+links:
+https://www.postgresql.org/download/
+https://start.spring.io/
+https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.2.7.RELEASE&packaging=jar&jvmVersion=11&groupId=io.github.dougllasfps&artifactId=agenda&name=agenda-api&description=Demo%20project%20for%20Spring%20Boot&packageName=io.github.dougllasfps.agenda&dependencies=web,postgresql,devtools,lombok,data-jpa
+https://material.angular.io/
+
+criar app angular
+ng new agenda-app
+yes (angular routing)
+css
+
+iniciar app
+ng serve
+
+instalar angular material
+ng add @angular/material
+indigo/pink (tema)
+yes (typography)
+yes (animations)
+
+criar componente e service contato
+ng g c --skipTests=true contato
+ng g s --skipTests=true contato
+
+extensão angular language service para vscode 
+- autocomplete e verificação da sintaxe
+
+formularios reativos -> programa os atributos e referencia no component
+
